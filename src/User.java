@@ -4,7 +4,6 @@ public class User {
     public User(String name) {
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
@@ -12,17 +11,14 @@ public class User {
 class Book {
     private String title;
     private String author;
-
-    public Book(String title, String author) {
+   public Book(String title, String author) {
         this.title = title;
         this.author = author;
     }
-
     public String getTitle() {
         return title;
     }
-
-    public String getAuthor() {
+   public String getAuthor() {
         return author;
     }
 }
