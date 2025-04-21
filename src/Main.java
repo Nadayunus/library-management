@@ -1,27 +1,29 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Admin admin = new Admin("Admin User");
 
         while (true) {
+            System.out.println("\n Library System ");
             System.out.println("1. Login as Admin");
-            System.out.println("2. Search for a book");
+            System.out.println("2. Search for a Book");
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
+
             int choice = scanner.nextInt();
             scanner.nextLine();
+
             switch (choice) {
                 case 1:
                     System.out.println("\n--- Admin Menu ---");
-                    System.out.println("1. Add a book");
-                    System.out.println("2. View all books");
+                    System.out.println("1. Add a Book");
+                    System.out.println("2. View All Books");
                     System.out.println("3. Logout");
                     System.out.print("Enter your choice: ");
                     int adminChoice = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine();
 
                     switch (adminChoice) {
                         case 1:
@@ -38,20 +40,23 @@ public class Main {
                             System.out.println("Logged out as Admin.");
                             break;
                         default:
-                            System.out.println("Invalid choice.");
+                            System.out.println("Invalid admin choice.");
                     }
-                        break;
+                    break;
+
                 case 2:
                     System.out.print("Enter the title of the book to search: ");
                     String searchTitle = scanner.nextLine();
                     admin.searchBook(searchTitle);
                     break;
+
                 case 3:
-                    System.out.println("Exiting the application.");
+                    System.out.println("Exiting application. Goodbye!");
                     scanner.close();
                     return;
+
                 default:
-                    System.out.println("Not valid");
+                    System.out.println("Invalid main menu choice.");
             }
         }
     }
